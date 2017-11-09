@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VitalMed - Login</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body class="col">
+	<header>
+		<a href="./Home.html" class="logo" ><img src="/static/img/Logo.png"></a>
+		<ul class="nolist">
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/quienes-somos">Quienes Somos</a></li>
+			<li><a href="/descubre">Descubre</a></li>
+			<li><a href="/contacto">Contacto</a></li>
+		</ul>
+	</header>
+	<div class="container f-center">
+		<div class="card blue-theme col row4">
+			<form method="POST" action="./Login.php">
+				<h3>Inicio de Sesi&oacute;n</h3>
+				<h4>Usuario</h4>
+				<input type="text" name="User"  placeholder="Usuario">
+				<h4>Contrase&ntilde;a</h4>
+				<input type="password" name="Pass" placeholder="Contrase&ntilde;a">
+				<div class="f-between">
+					<span>
+						<input id="keepopen" type="checkbox" name="GuardarSesion">
+						<label for="keepopen" >No cerrar sesi&oacute;n</label>
+					</span>
+					<span><a href="#">&iquest;Has olvidado tu contrase&ntilde;a&quest;</a></span>
+				</div>
+				<div class="t-right">
+					<div>
+						<input id="loginBtn" type="submit" name="submit" value="Iniciar Sesi&oacute;n">
+					</div>
+
+					<p><a href="#" class="right">&iquest;Aun no tienes una cuenta&quest; Registrate aqui</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+	<footer>
+		<ul class="nolist f-center">
+			<li><a href="#">Aviso de Terminos y Condiciones</a></li>
+			<li><a href="#">Tel&eacute;fono: (+52 -81) 1948 - 6763</a></li>
+			<li><a href="#">Correo electr&oacute;nico: vitalmed@outlook.es</a></li>
+			<li><a href="#">VitalMed es creado por Alcance M&eacute;dico S.A de C.V</a></li>
+		</ul>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+.noselect, .calendar td, .calendar tr  {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+.calendar{
+	border: 1px solid gray;
+	font-size: 25px;
+	font-family: "Roboto", sans-serif;
+	display: inline-block;
+	text-align: center;
+	height: 19em;
+}
+.calendar table{
+	float: left;
+}
+.calendar td, .calendar tr{
+	cursor: pointer;
+	color: rgb(85, 85, 85);
+	//border-radius: 100%;
+	border: 2px solid transparent;
+	padding: 0.8em;
+}
+.calendar tr{
+	cursor: initial;
+}
+.calendar td.prev{
+	background: rgba(128, 128,128, 0.125);
+}
+.calendar td:hover{
+	background: rgba(0, 0, 0, 0.25)
+}
+.calendar td.alt{
+	color: #F45267;
+	border-color: #F45267;
+}
+@keyframes todayAnim{
+	0%  {background-color: #F69C55;}
+	50% {background-color: #ffc79b;}
+	100%{background-color: #F69C55;}
+}
+.calendar td.today{
+	background: #6495ED;
+	color: white;
+}
+.calendar td.today.alt{
+	animation: 0.5s "todayAnim" infinite;
+}
+.calendar td.muted{
+	color: rgba(0, 0, 0, 0.25)
+}
+.calendar .bigDay{
+	background: rgb(78, 205, 196);
+	width: 100%;
+	position: relative;
+	transition: 300ms;
+	top:0;
+	bottom: 0;
+	vertical-align: center;
+	line-height: 0;
+}
+.calendar .bigDay *{
+	line-height: 0;
+	margin: 0;
+}
+.calendar .bigDay.alt.today{
+	animation: 1s "todayAnim" infinite;
+}
+.calendar .bigDay.minimize{
+	transition: 300ms;
+	opacity: 0;
+	pointer-events: none;
+}
+.calendar time{
+	display: block;
+}
