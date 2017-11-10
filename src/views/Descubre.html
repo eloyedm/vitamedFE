@@ -3,27 +3,27 @@
 <head>
 	<title>VitalMed - Descubre</title>
     <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<!--jQuery-->
-    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
 
 	<!--CARROUSEL->
-    <link rel="stylesheet" type="text/css" href="./libs/jCarousel/style.css"-->
-    <link rel="stylesheet" type="text/css" href="./libs/jCarousel/jcarousel.basic.css">
-    <script type="text/javascript" src="./libs/jCarousel/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript" src="./libs/jCarousel/jcarousel.basic.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/libs/jCarousel/style.css"-->
+    <link rel="stylesheet" type="text/css" href="/static/libs/jCarousel/jcarousel.basic.css">
+    <script type="text/javascript" src="/static/libs/jCarousel/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="/static/libs/jCarousel/jcarousel.basic.js"></script>
 </head>
 <body class="col">
 	<header>
-		<a href="./Home.html" class="logo" ><img src="./img/logo.png"></a>
-		<ul class="nolist">
-			<li><a href="./Home.html">Inicio</a></li>
-			<li><a href="./QuienesSomos.html">Quienes Somos</a></li>
-			<li><a href="./Descubre.html">Descubre</a></li>
-			<li><a href="./Contacto.html">Contacto</a></li>
-		</ul>
-	</header>
+    <a href="/" class="logo" ><img src="/static/img/Logo.png"></a>
+    <ul class="nolist">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/quienes-somos">Quienes Somos</a></li>
+      <li><a href="/descubre">Descubre</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+  </header>
 	<div class="container f-between">
 		<div class="row">
 			<div class="row ">
@@ -33,12 +33,12 @@
 					<div class="col">
 						<div class="overBox">
 							<p>&iquest;A&uacute;n no tienes una cuenta&quest;</p>
-							<input type="button" name="SignIn" value="Registrate aqu&iacute;" onclick="window.location.href = './SignIn.html'">
+							<input type="button" name="SignIn" value="Registrate aqu&iacute;" onclick="window.location.href = '/signin'">
 						</div>
 						<div class="col">
 							<div>
 								<p>&iquest;Ya tienes una cuenta&quest;</p>
-								<input type="button" name="login" value="Inicia sesi&oacute;n" onclick="window.location.href = './Login.html'">
+								<input type="button" name="login" value="Inicia sesi&oacute;n" onclick="window.location.href = '/Login'">
 							</div>
 						</div>
 					</div>

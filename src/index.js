@@ -26,3 +26,15 @@ app.get('/login', function(req, res){
 app.get('/signin', function(req, res){
   res.sendFile(__dirname +'/views/SignIn.html');
 })
+
+app.get('/quienes-somos', function(req, res){
+  res.sendFile(__dirname +'/views/QuienesSomos.html');
+})
+
+app.get('/descubre', function(req, res){
+  res.sendFile(__dirname +'/views/Descubre.html');
+})
+
+app.get('/contacto', function(req, res){
+  res.sendFile(__dirname +'/views/Contacto.html');
+})
