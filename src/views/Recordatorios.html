@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VitalMed - Tus Recordatorios</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+	<!--jQuery-->
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+
+	<!--CARROUSEL-->
+    <link rel="stylesheet" type="text/css" href="./libs/jCarousel/jcarousel.basic.css">
+    <script type="text/javascript" src="./libs/jCarousel/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="./libs/jCarousel/jcarousel.basic.js"></script>
+
+    <!--Calendario-->
+	<script type="text/javascript" src="./calendario/calendar.js"></script>
+	<link rel="stylesheet" type="text/css" href="./calendario/calendar.css">
+
+</head>
+<body class="col">
+	<header class="dash">
+		<a href="./Home.html" class="logo" ><img src="./img/logo.png"><span class="tag">VitalMed</span></a>
+		<ul class="nolist">
+			<li><a href="./VerCitas.html">Programar Citas</a></li>
+			<li><a href="./Configuracion.html">Configuraci&oacute;n</a></li>
+			<li><a href="./Home.html">Cerrar Sesi&oacute;n</a></li>
+
+			<li><a href="./Home.html">Ayuda</a></li>
+		</ul>
+	</header>
+	<div class="container f-between">
+		<div class="row fill">
+			<div class="row ">
+				<div class="card dash-theme col f-between nmargin side">
+					<div class="col">
+						<!--RECORDATORIOS-->
+						<div class="overBox">
+							<p>Recordatorios</p>
+							<div class="row f-even">
+								<a href="./Recordatorios.html"><img src="./img/icons/verRecordatorio.png"></a>
+								<a href="./NuevaCita.html"><img src="./img/icons/agregarRecordatorio.png"></a>
+							</div>
+						</div>
+						<!--CITAS-->
+						<div class="overBox">
+							<p>Citas</p>
+							<div class="row f-even">
+								<a href="./VerCitas.html"><img src="./img/icons/agregarRecordatorio.png"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col f-left card r-margin">
+				<div class="col f-left">
+
+					<!--RECETA RESURTIBLE-->
+					<div class="receta row f-left">
+						<div class="receta-container">
+							<img src="./img/backs/cita_receta.png">
+							<strong>Receta resurtible</strong>
+						</div>
+						<div class="wrapper">
+				            <div class="jcarousel-wrapper">
+				                <div class="jcarousel">
+				                    <ul>
+				                    	<!--ELEMENTO 1-->
+				                        <li>
+				                        	<div class="receta-container row">
+											<div class="row">
+											<div class="fill block">
+												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+												<p>Departamento: Farmacia</p>
+												<p>&nbsp;</p>
+												<p>&nbsp;</p>
+											</div>
+											</div>
+											</div>
+				                        </li>
+				                    	<!--ELEMENTO 2-->
+				                    </ul>
+				                </div>
+				                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+				                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+				                <p class="jcarousel-pagination">
+				                </p>
+				            </div>
+				        </div>
+					</div>
+					<!--MEDICINA GENERAL-->
+					<div class="receta row f-left">
+						<div class="receta-container">
+							<img src="./img/backs/cita_med.png">
+							<strong>M&eacute;dicina general</strong>
+						</div>
+						<div class="wrapper">
+					        <div class="jcarousel-wrapper">
+					            <div class="jcarousel">
+					                <ul>
+					                	<!--ELEMENTO 1-->
+					                    <li>
+					                    	<div class="receta-container row">
+											<div class="row">
+											<div class="fill block">
+												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+												<p>Consultorio: Farmacia</p>
+												<p>Doctor: Simi</p>
+												<p>&nbsp;</p>
+											</div>
+											</div>
+											</div>
+					                    </li>
+					                	<!--ELEMENTO 2-->
+					                    <li>
+					                    	<div class="receta-container row">
+											<div class="row">
+											<div class="fill block">
+												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+												<p>Consultorio: Farmacia</p>
+												<p>Doctor: Simi</p>
+												<p>&nbsp;</p>
+											</div>
+											</div>
+											</div>
+					                    </li>
+					                	<!--ELEMENTO 3-->
+					                    <li>
+					                    	<div class="receta-container row">
+											<div class="row">
+											<div class="fill block">
+												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+												<p>Consultorio: Farmacia</p>
+												<p>Doctor: Simi</p>
+												<p>&nbsp;</p>
+											</div>
+											</div>
+											</div>
+					                    </li>
+					                	<!--ELEMENTO 4-->
+					                    <li>
+					                    	<div class="receta-container row">
+											<div class="row">
+											<div class="fill block">
+												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+												<p>Consultorio: Farmacia</p>
+												<p>Doctor: Simi</p>
+												<p>&nbsp;</p>
+											</div>
+											</div>
+											</div>
+					                    </li>
+					                </ul>
+					            </div>
+					            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+					            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+					            <p class="jcarousel-pagination">
+					            </p>
+					        </div>
+					    </div>
+					</div>
+
+					<!--ESPECIALIDAD-->
+					<div class="receta row f-left">
+						<div class="receta-container">
+							<img src="./img/backs/cita_spec.png">
+							<strong>Especialidad</strong>
+						</div>
+						<div class="wrapper">
+					        <div class="jcarousel-wrapper">
+					            <div class="jcarousel">
+					                <ul>
+					                	<!--ELEMENTO 1-->
+					                    <li>
+					                    	<div class="receta-container row">
+											<div class="row">
+											<div class="fill block">
+												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+												<p>Consultorio: Farmacia</p>
+												<p>Doctor: Malito</p>
+												<p>Departamento: Malvado</p>
+											</div>
+											</div>
+											</div>
+					                    </li>
+					                	<!--ELEMENTO 2-->
+					                </ul>
+					            </div>
+					            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+					            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+					            <p class="jcarousel-pagination">
+					            </p>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="dash">
+		<ul class="nolist f-left">
+			<li><a href="#">Tel&eacute;fono: (+52 -81) 1948 - 6763</a></li>
+			<li><a href="#">Correo electr&oacute;nico: vitalmed@outlook.es</a></li>
+		</ul>
+	</footer>
+</body>
+</html>

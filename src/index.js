@@ -38,3 +38,11 @@ app.get('/descubre', function(req, res){
 app.get('/contacto', function(req, res){
   res.sendFile(__dirname +'/views/Contacto.html');
 })
+
+app.get('/citas', function(req, res){
+  res.sendFile(__dirname +'/views/NuevaCita.html');
+})
+
+app.get('/recordatorios', function(req, res){
+  res.sendFile(__dirname +'/views/Recordatorios.html');
+})
