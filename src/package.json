@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
-    "serve-static": "^1.13.1"
+    "serve-static": "^1.13.1",
+    "unirest": "^0.5.1"
   },
   "devDependencies": {},
   "scripts": {

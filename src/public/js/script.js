@@ -1,9 +1,13 @@
+// var serviceHost = 'http://vitamedbe.local';
+var serviceHost = 'http://localhost:8000';
+var cookies;
+
 $(document).ready(function(){
 	$("#signInBtn").click( function(event){
 		event.preventDefault();
 		$.ajax({
 			method: 'POST',
-			url: 'http://vitamedbe.local/services/login',
+			url: serviceHost+'/services/login',
 			data: {
 				email: $('input[name="Mail"]').val(),
 				password: $('input[name="Pass"]').val(),
@@ -24,15 +28,19 @@ $(document).ready(function(){
 		event.preventDefault();
 		$.ajax({
 			method: 'POST',
-			url: 'http://vitamedbe.local/services/login',
+			url: serviceHost+'/services/login',
 			data: {
 				email: $('input[name="Mail"]').val(),
 				password: $('input[name="Pass"]').val()
 			}
 			,success: function(data){
 				if (data.status == 202){
-					//window.location.replace = ""
-					alert("Te has logueado!");
+					if(readCookie('sessionToken') == null){
+						eraseCookie('username');
+						eraseCookie('sessionToken');
+					}
+					createCookie('sessionToken', data.data.token, 1);
+					createCookie('username', $('input[name="Mail"]').val());
 				}
 			}
 		})
@@ -71,3 +79,33 @@ $(document).ready(function(){
 	})
 	$(".hide-target")[0].click();
 })
+
+function getCookieValue(a) {
+    var b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b ? b.pop() : '';
+}
+
+function createCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}

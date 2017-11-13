@@ -1,10 +1,16 @@
 var express = require('express');
 var app = express()
 var bodyParser = require('body-parser');
-var serveStatic = require('serve-static')
+var serveStatic = require('serve-static');
+var cookieParser = require('cookie-parser');
+var unirest = require('unirest')
 var fs = require('fs');
 
+// var serviceHost = 'http://vitamedbe.local';
+var serviceHost = 'http://localhost:8000';
+
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
@@ -40,13 +46,64 @@ app.get('/contacto', function(req, res){
 })
 
 app.get('/citas', function(req, res){
-  res.sendFile(__dirname +'/views/VerCitas.html');
+  validateSession(req.cookies, function(data){
+    if(data){
+      res.sendFile(__dirname +'/views/VerCitas.html');
+    }else{
+      res.redirect('/');
+    }
+  });
 })
 
 app.get('/recordatorios', function(req, res){
-  res.sendFile(__dirname +'/views/Recordatorios.html');
+  validateSession(req.cookies, function(data){
+    if(data){
+      res.sendFile(__dirname +'/views/Recordatorios.html');
+    }else{
+      res.redirect('/');
+    }
+  });
 })
 
 app.get('/nueva', function(req, res){
-  res.sendFile(__dirname +'/views/NuevaCita.html');
+  validateSession(req.cookies, function(data){
+    if(data){
+      res.sendFile(__dirname +'/views/NuevaCita.html');
+    }else{
+      res.redirect('/');
+    }
+  });
+});
+
+app.get('/home', function(req, res){
+  validateSession(req.cookies, function(data){
+    if(data){
+      res.sendFile(__dirname + '/views/Dashboard.html');
+    }else{
+      res.redirect('/');
+    }
+  });
 })
+
+app.get('/test', function(req, res){
+  validateSession(req.cookies, function(data){
+    if(data){
+      res.sendFile(__dirname + '/views/Dashboard.html');
+    }else{
+      res.
+    }
+  });
+})
+
+function validateSession(data, callback){
+  unirest.post(serviceHost+'/services/validate')
+  .field('user', data.username)
+  .field('token', data.sessionToken)
+  .end(function(res) {
+    if (res.error) {
+      callback(false);
+    } else {
+      callback(true);
+    }
+  })
+}
