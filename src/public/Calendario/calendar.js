@@ -7,9 +7,6 @@ $(document).ready(function(){
 		var semana = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"];
 		var largoMes = [31, 28-29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-
-
-
 		var vDate = new Date();
 
 		var threshold = 2;
@@ -82,10 +79,12 @@ $(document).ready(function(){
 		}
 
 	})
+	$(".calendar td").on("click", function(){
 
+		console.log(this.innerHTML);
+	});
 	$(".calendar .bigDay").on("click", function () {
 		console.log("out");
 		$(this).toggleClass("minimize");
-		//$(this).hide(500, "swing");
-	})
+	});
 })

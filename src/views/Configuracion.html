@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VitalMed - Programar Citas</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<!--jQuery-->
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
+
+	<!--CARROUSEL-->
+    <link rel="stylesheet" type="text/css" href="./libs/jCarousel/jcarousel.basic.css">
+    <script type="text/javascript" src="./libs/jCarousel/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="./libs/jCarousel/jcarousel.basic.js"></script>
+
+    <!--Calendario-->
+	<script type="text/javascript" src="./calendario/calendar.js"></script>
+	<link rel="stylesheet" type="text/css" href="./calendario/calendar.css">
+
+	<!--DatePicker-->
+	<link rel="stylesheet" href="/static/css/smoothness.css">
+	<script src="/static/js/jquery-ui.min.js"></script>
+
+</head>
+<body class="col">
+	<header class="dash">
+		<a href="./Home.html" class="logo" ><img src="/static/img/Logo.png"><span class="tag">VitalMed</span></a>
+		<ul class="nolist">
+			<li><a href="/ver">Programar Citas</a></li>
+			<li><a href="/configuracion">Configuraci&oacute;n</a></li>
+			<li><a href="/">Cerrar Sesi&oacute;n</a></li>
+
+			<li><a href="/">Ayuda</a></li>
+		</ul>
+	</header>
+	<div class="container f-between">
+		<div class="row f-arround 	fill">
+			<div class="row ">
+				<div class="card dash-theme col f-between nmargin side">
+					<div class="col">
+						<!--RECORDATORIOS-->
+						<div class="overBox">
+							<p>Recordatorios</p>
+							<div class="row f-even">
+								<a href="./Recordatorios.html"><img src="/static/img/icons/verRecordatorio.png"></a>
+								<a href="./NuevaCita.html"><img src="/static/img/icons/agregarRecordatorio.png"></a>
+							</div>
+						</div>
+						<!--CITAS-->
+						<div class="overBox">
+							<p>Citas</p>
+							<div class="row f-even">
+								<a href="./VerCitas.html"><img src="/static/img/icons/agregarRecordatorio.png"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col f-center t-center r-margin f3">
+				<p>Selecciona el tipo de recordatorio que desea y llene el formulario</p>
+				<div class="row f-center autow autoh">
+					<!--PERSONALES-->
+					<div class="receta hide-target active" 	data-target="me1">
+						<div class="receta-container">
+							<img src="/static/img/backs/config_cuenta.png">
+							<strong >Datos Personales</strong>
+						</div>
+					</div>
+					<!--USUARIO-->
+					<div class="receta hide-target" 		data-target="me2">
+						<div class="receta-container">
+							<img src="/static/img/backs/config_pass.png">
+							<strong>Datos de usuario</strong>
+						</div>
+					</div>
+					<!--MEDICOS-->
+					<div class="receta hide-target"			data-target="me3">
+						<div class="receta-container">
+							<img src="/static/img/backs/config_info.png">
+							<strong>Datos m&eacute;dicos</strong>
+						</div>
+					</div>
+				</div>
+
+
+				<!--PERSONALES DATA-->
+				<div class="blue-theme container card autow autoh nmtop"  id="me1">
+					<div class="row f-center f1">
+						<form class="col f-center f1">
+							<h3>Datos Personales</h3>
+							<p>
+								<div class="col">
+									<label for="inp0" class="t-left">Nombre</label>
+									<input type="text" id="inp0" name="">
+								</div>
+								<div class="col">
+									<label for="inp1" class="t-left">Apellido Paterno</label>
+									<input type="text" id="inp1" name="">
+								</div>
+								<div class="col">
+									<label for="inp2" class="t-left">Apellido Materno</label>
+									<input type="text" id="inp2" name="">
+								</div>
+							 </p>
+							 <div class="f-right">
+							 	<input type="button" name="" value="Guardar cambios">
+							 </div>
+						</form>
+					</div>
+				</div>
+				<!--USUARIO DATA-->
+				<div class="blue-theme container card autow autoh nmtop"  id="me2">
+					<div class="row f-center f1">
+						<form class="col f-center f1">
+							<h3>Datos de usuario</h3>
+								<h4>Correo electr&oacute;nico</h4>
+								<div class="row">
+									<div class="col">
+										<label for="inp3" class="t-left">Nuevo correo electr&oacute;nico</label>
+										<input type="email" id="inp3" name="">
+									</div>
+									<div class="col">
+										<label for="inp4" class="t-left">Confirma tu correo</label>
+										<input type="email" id="inp4" name="">
+									</div>
+								</div>
+
+								<h4>Reestablecer contrase&ntilde;a</h4>
+								<div class="row">
+									<div class="col">
+										<label for="inp5" class="t-left">Nueva contrase&ntilde;a</label>
+										<input type="password" id="inp5" name="">
+									</div>
+									<div class="col">
+										<label for="inp6" class="t-left">Confirma tu contrase&ntilde;a</label>
+										<input type="password" id="inp6" name="">
+									</div>
+								</div>
+							 <p class="f-right">
+							 	<input type="button" name="" value="Guardar cambios">
+							 </p>
+						</form>
+					</div>
+				</div>
+				<!--MEDICOS DATA-->
+				<div class="blue-theme container card autow autoh nmtop"  id="me3">
+					<div class="row f-center f1">
+						<form class="col f-center f1">
+							<h3>Informaci&oacute;n medica</h3>
+							<p>
+								<div class="col">
+									<label for="inp0" class="t-left">Tipo de sangre</label>
+									<input type="text" id="inp0" name="">
+								</div>
+								<p>
+									<div class="col f-center">
+										<label for="inp1" class="t-left">Alergias</label>
+										<input type="text" id="inp1" name="">
+									</div>
+								</p>
+							 </p>
+							 <div class="f-right">
+							 	<input type="button" name="" value="Guardar cambios">
+							 </div>
+						</form>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	<footer class="dash">
+		<ul class="nolist f-left">
+			<li><a href="#">Tel&eacute;fono: (+52 -81) 1948 - 6763</a></li>
+			<li><a href="#">Correo electr&oacute;nico: vitalmed@outlook.es</a></li>
+		</ul>
+	</footer>
+</body>
+</html>

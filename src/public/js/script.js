@@ -1,7 +1,5 @@
 $(document).ready(function(){
 	$("#signInBtn").click( function(event){
-		window.location.replace = "./Citas.html";
-
 		event.preventDefault();
 		$.ajax({
 			method: 'POST',
@@ -23,8 +21,6 @@ $(document).ready(function(){
 		})
 	})
 	$("#loginBtn").click(function(event){
-		window.location.replace = "./Citas.html";
-
 		event.preventDefault();
 		$.ajax({
 			method: 'POST',
@@ -42,6 +38,7 @@ $(document).ready(function(){
 		})
 	})
 
+
 	$(".hide-trigger").on("click",function(){
 		$(".hide-trigger").each(function(){
 			$(this).removeClass("active");
@@ -53,4 +50,24 @@ $(document).ready(function(){
 			$("#hide-card").fadeIn(100);
 		});
 	})
+
+	$(".hide-target").on("click",function(){
+
+		$(".hide-target").each(function(){
+			$(this).removeClass("active");
+			$("#" + $(this).attr("data-target")).fadeOut(250);
+		})
+		$(this).addClass("active");
+
+
+		var hidenSeek = "#" + $(this).attr("data-target");
+		var tmp = function(a){
+			$(a).fadeIn(100);
+		}
+		setTimeout(tmp, 250, hidenSeek);
+	});
+	$(".hide-target").each(function(){
+		$("#" + $(this).attr("data-target")).fadeOut(0);
+	})
+	$(".hide-target")[0].click();
 })

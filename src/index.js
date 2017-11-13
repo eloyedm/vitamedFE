@@ -40,9 +40,13 @@ app.get('/contacto', function(req, res){
 })
 
 app.get('/citas', function(req, res){
-  res.sendFile(__dirname +'/views/NuevaCita.html');
+  res.sendFile(__dirname +'/views/VerCitas.html');
 })
 
 app.get('/recordatorios', function(req, res){
   res.sendFile(__dirname +'/views/Recordatorios.html');
+})
+
+app.get('/nueva', function(req, res){
+  res.sendFile(__dirname +'/views/NuevaCita.html');
 })
