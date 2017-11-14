@@ -18,6 +18,8 @@ body{
 body > *{
 	flex-grow: 1;
 }
+
+
 .card{
 	padding: 1em 5em 3em 5em;
 	border-radius: 4px;
@@ -31,6 +33,7 @@ body > *{
 	padding: 2em 0;
 	display: inline-block;
 }
+
 input[type="text"], input[type="password"],input[type="button"], input[type="submit"], input[type="email"], select, input[type="date"], input[type="time"]{
 	width: 100%;
 	padding: 8px;
@@ -303,8 +306,10 @@ header.dash .logo img{
 .dash-theme .overBox .col a{
 	margin: 0.5em;
 }
-.r-margin{
-	margin-right: 13em;
+@media screen and (min-width: 1250px){
+	.r-margin{
+		margin-right: 13em;
+	}
 }
 .nmtop{
 	margin-top: 0; 
@@ -393,7 +398,7 @@ header.dash .logo img{
 	transform: translate(-50%, -50%);
 	background: white;
 	border-radius: 5px;
-	box-shadow: 1px 3px 4px rgba(64,64,64, 0.5);
+	box-shadow: 1px 3px 15px rgba(64,64,64, 0.5);
 }
 .popup label{
 	width: 100%;
@@ -410,3 +415,8 @@ header.dash .logo img{
 .row3{	width: 33% !important;}
 .row4{	width: 25% !important;}
 .fill{ width: 100% !important;}
+
+#chartContainer{
+	width: 100%;
+	height: 350px;
+}

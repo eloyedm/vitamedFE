@@ -15,8 +15,8 @@
 
     <!--Calendario-->
 	<script type="text/javascript" src="/static/Calendario/calendar.js"></script>
+	<script type="text/javascript" src="./js/webapp.js"></script>
 	<link rel="stylesheet" type="text/css" href="/static/Calendario/calendar.css">
-
 </head>
 <body class="col">
 	<header class="dash">
@@ -49,10 +49,16 @@
 								<a href="/nueva"><img src="/static/img/icons/agregarRecordatorio.png"></a>
 							</div>
 						</div>
+						<div class="overBox">
+							<p>Volver al dashboard</p>
+							<div class="row f-even">
+								<a href="./Dashboard.html"><img src="./img/icons/verRecordatorio.png"></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col f-left card r-margin">
+			<div class="row f-left card r-margin">
 				<div class="col f-left">
 
 					<!--RECETA RESURTIBLE-->
@@ -64,21 +70,7 @@
 						<div class="wrapper">
 				            <div class="jcarousel-wrapper">
 				                <div class="jcarousel">
-				                    <ul>
-				                    	<!--ELEMENTO 1-->
-				                        <li>
-				                        	<div class="receta-container row">
-											<div class="row">
-											<div class="fill block">
-												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
-												<p>Departamento: Farmacia</p>
-												<p>&nbsp;</p>
-												<p>&nbsp;</p>
-											</div>
-											</div>
-											</div>
-				                        </li>
-				                    	<!--ELEMENTO 2-->
+				                    <ul id="rec_receta">
 				                    </ul>
 				                </div>
 				                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
@@ -97,59 +89,8 @@
 						<div class="wrapper">
 					        <div class="jcarousel-wrapper">
 					            <div class="jcarousel">
-					                <ul>
-					                	<!--ELEMENTO 1-->
-					                    <li>
-					                    	<div class="receta-container row">
-											<div class="row">
-											<div class="fill block">
-												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
-												<p>Consultorio: Farmacia</p>
-												<p>Doctor: Simi</p>
-												<p>&nbsp;</p>
-											</div>
-											</div>
-											</div>
-					                    </li>
-					                	<!--ELEMENTO 2-->
-					                    <li>
-					                    	<div class="receta-container row">
-											<div class="row">
-											<div class="fill block">
-												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
-												<p>Consultorio: Farmacia</p>
-												<p>Doctor: Simi</p>
-												<p>&nbsp;</p>
-											</div>
-											</div>
-											</div>
-					                    </li>
-					                	<!--ELEMENTO 3-->
-					                    <li>
-					                    	<div class="receta-container row">
-											<div class="row">
-											<div class="fill block">
-												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
-												<p>Consultorio: Farmacia</p>
-												<p>Doctor: Simi</p>
-												<p>&nbsp;</p>
-											</div>
-											</div>
-											</div>
-					                    </li>
-					                	<!--ELEMENTO 4-->
-					                    <li>
-					                    	<div class="receta-container row">
-											<div class="row">
-											<div class="fill block">
-												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
-												<p>Consultorio: Farmacia</p>
-												<p>Doctor: Simi</p>
-												<p>&nbsp;</p>
-											</div>
-											</div>
-											</div>
-					                    </li>
+					                <ul id="rec_general">
+
 					                </ul>
 					            </div>
 					            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
@@ -169,21 +110,7 @@
 						<div class="wrapper">
 					        <div class="jcarousel-wrapper">
 					            <div class="jcarousel">
-					                <ul>
-					                	<!--ELEMENTO 1-->
-					                    <li>
-					                    	<div class="receta-container row">
-											<div class="row">
-											<div class="fill block">
-												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
-												<p>Consultorio: Farmacia</p>
-												<p>Doctor: Malito</p>
-												<p>Departamento: Malvado</p>
-											</div>
-											</div>
-											</div>
-					                    </li>
-					                	<!--ELEMENTO 2-->
+					                <ul id="rec_especial">
 					                </ul>
 					            </div>
 					            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
