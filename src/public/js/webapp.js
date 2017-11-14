@@ -1,3 +1,4 @@
+// var serviceHost = 'http://vitamedbe.local';
 var serviceHost = 'http://localhost:8000';
 var cookies;
 
@@ -6,7 +7,7 @@ $(document).ready(function(){
 	var user = readCookie('username');
 	var userToken = readCookie('sessionToken');
 	if 	($("#citasHolder").length > 0)
-		dashboard_get('routes/dashboard', user, userToken);
+		dashboard_get(serviceHost+'/services/dashboard', user, userToken);
 	else if
 	//CITAS
 		//($("#cita_disponible").length > 0)
@@ -28,24 +29,24 @@ $(document).ready(function(){
 			type: 'POST',
 			data: {user: user, token: token},
 			success: function(response){
-				var result = JSON.parse(response);
+				var result = response
 				var chartVal = result.chart;
 				var citasVal = result.citas;
 				var chartPoints = [];
-
 				//GRAFICO DE CITAS
-				for (var i = 0; i < chartVal.length; i++){
-					var t = chartVal[i].x.split(/[- :]/);
-					chartVal[i].x = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-					chartPoints.push(chartVal[i]);
+				if(chartVal !== undefined){
+					for (var i = 0; i < chartVal.length; i++){
+						var t = chartVal[i].x.split(/[- :]/);
+						chartVal[i].x = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+						chartPoints.push(chartVal[i]);
+					}
 				}
-
 
 				//CITAS
 				for (var i = 0; i < citasVal.length; i++){
 
                  	var envelope = 	$('<div class="fill block"></div>')
-                 			.append('<h4 class=" t-center"><TIME>'	+citasVal[i].fecha 		+'</TIME></h4>')
+                 			.append('<h4 class=" t-center"><TIME>'	+citasVal[i].fecha.date 		+'</TIME></h4>')
                  			.append('<p>Consultorio: '				+citasVal[i].consultorio+'</p>')
                  			.append('<p>Doctor: '					+citasVal[i].doctor 	+'</p>')
                  			.append('<p>Numero de cita: '			+citasVal[i].cita 		+'</p>');

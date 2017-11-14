@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VitalMed - Descubre</title>
+  <title>VitalMed - Dashboard</title>
     <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <!--jQuery-->
-    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/static/js/script.js"></script>
 
   <!--CARROUSEL->
@@ -22,18 +22,21 @@
   <!--CHART-->
   <script type="text/javascript" src="/static/js/jquery.canvasjs.min.js"></script>
 
+  <!--APP-->
+  <script type="text/javascript" src="/static/js/webapp.js"></script>
+
 </head>
 
 <body class="col">
   <header class="dash">
-    <a href="./Home.html" class="logo" ><img src="/static/img/logo.png"><span class="tag">VitalMed</span></a>
+    <a href="/" class="logo" ><img src="/static/img/logo.png"><span class="tag">VitalMed</span></a>
     <ul class="nolist">
-      <li><a href="./Dashboard.html">Dashboard</a></li>
-      <li><a href="./VerCitas.html">Programar Citas</a></li>
-      <li><a href="./Configuracion.html">Configuraci&oacute;n</a></li>
-      <li><a href="./Home.html">Cerrar Sesi&oacute;n</a></li>
+      <li><a href="/home">Dashboard</a></li>
+      <li><a href="/citas">Programar Citas</a></li>
+      <li><a href="/configuracion">Configuraci&oacute;n</a></li>
+      <li><a href="/">Cerrar Sesi&oacute;n</a></li>
 
-      <li><a href="./Home.html">Ayuda</a></li>
+      <li><a href="/">Ayuda</a></li>
     </ul>
   </header>
   <div class="container f-between">
@@ -53,14 +56,14 @@
               <div class="overBox">
                 <p>Citas</p>
                 <div class="row f-even">
-                  <a href="./VerCitas.html"><img src="/static/img/icons/agregarRecordatorio.png"></a>
+                  <a href="/citas"><img src="/static/img/icons/agregarRecordatorio.png"></a>
                 </div>
             </div>
             <!--DASHBOARD-->
             <div class="overBox">
               <p>Volver al dashboard</p>
               <div class="row f-even">
-                <a href="./Dashboard.html"><img src="/static/img/icons/verRecordatorio.png"></a>
+                <a href="/home"><img src="/static/img/icons/verRecordatorio.png"></a>
               </div>
             </div>
           </div>
@@ -76,7 +79,20 @@
                     <h3>Citas pendientes</h3>
                       <div class="jcarousel">
                           <ul id="citasHolder">
-
+                            <!--ELEMENTO 1->
+                              <li>
+                                <div class="receta-container row">
+                                <div class="row">
+                                <div class="fill block">
+                                <h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+                                <p>Consultorio: Farmacia</p>
+                                <p>Doctor: Simi</p>
+                                <p>&nbsp;</p>
+                                </div>
+                                </div>
+                                </div>
+                              </li>
+                            <!-__________-->
                           </ul>
                       </div>
                       <a href="#" class="jcarousel-control-prev">&lsaquo;</a>

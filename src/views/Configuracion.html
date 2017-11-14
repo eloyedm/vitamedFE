@@ -16,8 +16,8 @@
     <script type="text/javascript" src="/static/libs/jCarousel/jcarousel.basic.js"></script>
 
     <!--Calendario-->
-	<script type="text/javascript" src="./calendario/calendar.js"></script>
-	<link rel="stylesheet" type="text/css" href="./calendario/calendar.css">
+	<script type="text/javascript" src="/static/Calendario/calendar.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/Calendario/calendar.css">
 
 	<!--DatePicker-->
 	<link rel="stylesheet" href="/static/css/smoothness.css">
@@ -26,9 +26,10 @@
 </head>
 <body class="col">
 	<header class="dash">
-		<a href="./Home.html" class="logo" ><img src="/static/img/Logo.png"><span class="tag">VitalMed</span></a>
+		<a href="/" class="logo" ><img src="/static/img/logo.png"><span class="tag">VitalMed</span></a>
 		<ul class="nolist">
-			<li><a href="/ver">Programar Citas</a></li>
+     		<li><a href="/home">Dashboard</a></li>
+			<li><a href="/citas">Programar Citas</a></li>
 			<li><a href="/configuracion">Configuraci&oacute;n</a></li>
 			<li><a href="/">Cerrar Sesi&oacute;n</a></li>
 
@@ -52,13 +53,14 @@
 						<div class="overBox">
 							<p>Citas</p>
 							<div class="row f-even">
-								<a href="./VerCitas.html"><img src="/static/img/icons/agregarRecordatorio.png"></a>
+								<a href="/citas"><img src="/static/img/icons/agregarRecordatorio.png"></a>
 							</div>
 						</div>
+						<!--DASHBOARD-->
 						<div class="overBox">
 							<p>Volver al dashboard</p>
 							<div class="row f-even">
-								<a href="./Dashboard.html"><img src="./img/icons/verRecordatorio.png"></a>
+								<a href="/home"><img src="/static/img/icons/verRecordatorio.png"></a>
 							</div>
 						</div>
 					</div>

@@ -66,7 +66,9 @@ app.get('/recordatorios', function(req, res){
 })
 
 app.get('/nueva', function(req, res){
+  console.log(req.cookies);
   validateSession(req.cookies, function(data){
+    console.log(data);
     if(data){
       res.sendFile(__dirname +'/views/NuevaCita.html');
     }else{
@@ -90,7 +92,7 @@ app.get('/test', function(req, res){
     if(data){
       res.sendFile(__dirname + '/views/Dashboard.html');
     }else{
-      res.
+      res.redirect('/login');
     }
   });
 })
