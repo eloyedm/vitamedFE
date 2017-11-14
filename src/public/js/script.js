@@ -7,7 +7,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		$.ajax({
 			method: 'POST',
-			url: serviceHost+'/services/login',
+			url: serviceHost+'/services/register',
 			data: {
 				email: $('input[name="Mail"]').val(),
 				password: $('input[name="Pass"]').val(),

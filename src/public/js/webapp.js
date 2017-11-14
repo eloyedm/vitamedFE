@@ -15,7 +15,7 @@ $(document).ready(function(){
 	//else if
 	//RECORDATORIOS
 		($("#rec_general").length > 0)
-		recordatorios_get('routes/recordatorios','Z_bas01@hotmail.com','123ABC');
+		recordatorios_get(serviceHost+'/services/recordatorios',user,userToken);
 	//else if
 	//CONFIGURACION
 		//($("#rec_general").length > 0)
