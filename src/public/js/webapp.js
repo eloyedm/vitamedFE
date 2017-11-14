@@ -94,14 +94,14 @@ $(document).ready(function(){
 			data: {user: user, token: token},
 			success: function(response){
 
-				var result = JSON.parse(response);
+				var result = response;
 				var citasVal = result.citas;
 
 				//CITAS
 				for (var i = 0; i < citasVal.length; i++){
 
                  	var envelope = 	$('<div class="fill block"></div>')
-                 			.append('<h4 class=" t-center"><TIME>'	+citasVal[i].fecha 		+'</TIME></h4>')
+                 			.append('<h4 class=" t-center"><TIME>'	+citasVal[i].fecha.date 		+'</TIME></h4>')
                  			.append('<p>Consultorio: '				+citasVal[i].consultorio+'</p>')
                  			.append('<p>Doctor: '					+citasVal[i].doctor 	+'</p>')
                  			.append('<p>Numero de cita: '			+citasVal[i].cita 		+'</p>');
@@ -148,4 +148,20 @@ function createCookie(name,value,days) {
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
 }
