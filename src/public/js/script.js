@@ -39,6 +39,7 @@ $(document).ready(function(){
 						eraseCookie('username');
 						eraseCookie('sessionToken');
 					}
+					window.location.replace('/home');
 					createCookie('sessionToken', data.data.token, 1);
 					createCookie('username', $('input[name="Mail"]').val());
 				}
