@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use('/static', serveStatic('public'));
 
 
-app.listen(8001, function(){
+app.listen(8000, function(){
   console.log('listening on *:8001');
 })
 
