@@ -1,5 +1,5 @@
-// var serviceHost = 'http://vitamedbe.local';
-var serviceHost = 'http://localhost:8000';
+var serviceHost = 'http://vitalmed.xyz:8080';
+// var serviceHost = 'http://localhost:8000';
 var cookies;
 
 $(document).ready(function(){

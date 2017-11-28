@@ -26,16 +26,17 @@ $(document).ready(function(){
 	$("#btnNuevaCita").click( function(event){
 		window.location.replace = "/citas";
 		event.preventDefault();
-		$.ajax({
+		var tipo = $()
+		// $.ajax({
 			method: 'POST',
 			url: serviceHost + '/services/cita',
 			data: {
 				tipo: $('input[name="tipoCita"]').val(),
-				fecha: $('input[name="inp0"]').val(),
-				hora: $('input[name="horaV"]').val(),
-				departamento: $('input[name="departamento"]').val(),
-				medico: $('input[name="medico"]').val(),
-				consultorio:$('input[name="inp3"]').val(),
+				fecha: $('#inp0').val(),
+				hora: $('#inp1').val(),
+				departamento: $('#inp2').val(),
+				medico: $('#inp3').val(),
+				consultorio:$('#inp4').val(),
 				user: user
 			}
 			,success: function(data){
