@@ -7,7 +7,7 @@ var unirest = require('unirest')
 var fs = require('fs');
 
 // var serviceHost = 'http://vitamedbe.local';
-var serviceHost = 'http://localhost:8000';
+var serviceHost = 'http://vitalmed.xyz:8080';
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(cookieParser());
