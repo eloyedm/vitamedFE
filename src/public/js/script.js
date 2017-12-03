@@ -78,7 +78,8 @@ $(document).ready(function(){
 	$(".hide-target").each(function(){
 		$("#" + $(this).attr("data-target")).fadeOut(0);
 	})
-	$(".hide-target")[0].click();
+	if ($(".hide-target").length)
+		$(".hide-target")[0].click();
 })
 
 function getCookieValue(a) {

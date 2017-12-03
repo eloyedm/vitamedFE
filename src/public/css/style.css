@@ -53,6 +53,8 @@ input[type="text"]:hover, input[type="password"]:hover,input[type="button"]:hove
 input[disabled], input[disabled]:hover{
 	font-style: italic;
 	background: rgba(250,250,250, 0.9);
+	height: 0.8em;
+	margin: 0.2em;
 }
 
 .blue-theme{
@@ -419,4 +421,16 @@ header.dash .logo img{
 #chartContainer{
 	width: 100%;
 	height: 350px;
+}
+*not(popup) input[disabled]{
+	background: #003366;
+	color: white;
+	font-weight: bold;
+}
+*not(popup) input[disabled]:hover{
+	background: #003366;
+	
+}
+#bltypes img{
+	width: 40px;
 }

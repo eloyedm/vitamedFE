@@ -1,20 +1,36 @@
 $(document).ready(function(){
-	$(".calendar").each(function(i){
+	var vDate = new Date();
 
-		console.log("in");
+	$(".calendar").each(function(){
+		actualizarCal($(this));
+	});
+
+	function actualizarCal(me){
+		me.empty();
+
+		if (me[0].hasAttribute("data-day") == false)
+			$(me).attr("data-day", vDate.getDate());
+
+		if (me[0].hasAttribute("data-month") == false)
+		$(me).attr("data-month", vDate.getMonth());
+
+		if (me[0].hasAttribute("data-year") == false)
+			$(me).attr("data-year", vDate.getFullYear());
+
+
+		var today = $(me).attr("data-day");
+		var esteMes = $(me).attr("data-month");
+		var esteAnio = $(me).attr("data-year");
+
 
 		var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octube", "Noviembre", "Diciembre"];
 		var semana = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"];
-		var largoMes = [31, 28-29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-		var vDate = new Date();
+		var largoMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 		var threshold = 2;
 
 		var altDays = [17,5,23];
 
-		var today = vDate.getDate();
-		var esteMes = vDate.getMonth();
 
 		var pmonthlen = largoMes[esteMes-1];
 		if (esteMes == 0)
@@ -24,13 +40,13 @@ $(document).ready(function(){
 
 		var count = 1;
 
-		$(this).append($("<time>"+meses[esteMes]+" del "+ vDate.getFullYear() +"</time>"));
+		$(me).append($("<time>"+meses[esteMes]+" del "+ esteAnio +"</time>"));
 
 		var table = $("<table></table>")
-		$(this).append(table);
+		$(me).append(table);
 
 		var bigDay = $("<div class='bigDay'></div>");
-		//$(this).append(bigDay);
+		//$(me).append(bigDay);
 
 
 		var header = $("<tr></tr>");
@@ -50,15 +66,15 @@ $(document).ready(function(){
 					showDay = count;
 
 					if (showDay > monthlen){
-						style = "muted";
+						style = "muted nextMonth";
 						showDay -= monthlen;
 					}else
-					if (showDay < today){
+					if (((showDay < today) && (esteMes <= vDate.getMonth())) || esteMes < vDate.getMonth()){
 						style = "muted prev";
 					}
 					count++;
 				}else{
-					style = "muted";
+					style = "muted prevMonth";
 					showDay = pmonthlen-threshold+count;
 					threshold--;
 				}
@@ -78,13 +94,47 @@ $(document).ready(function(){
 			}
 		}
 
-	})
-	$(".calendar td").on("click", function(){
+	}
+	$(document).on("click",".calendar td", function(){
 
-		console.log(this.innerHTML);
+		var cal = $(this).closest(".calendar");
+		var mnt = parseInt(cal.attr("data-month"));
+		var yr = parseInt(cal.attr("data-year"));
+
+		var redo = false;
+		if ($(this).hasClass("nextMonth")){
+			if ((mnt + 1) > 11){
+					cal.attr("data-month", 0);
+					cal.attr("data-year", yr+1);
+					mnt = 0;
+					redo = true;
+				}
+				else
+					cal.attr("data-month", mnt+1);
+			actualizarCal(cal);
+		}
+		else
+			if ($(this).hasClass("prevMonth")){
+				if ((mnt - 1) < 0){
+					cal.attr("data-month", 11);
+					cal.attr("data-year", yr-1);
+					mnt = 11;
+					redo = true;
+				}
+				else
+					cal.attr("data-month", mnt-1);
+			actualizarCal(cal);
+		}
+		else
+			$("#confirmarCita").fadeIn	(250);
+
+		mnt = parseInt(cal.attr("data-month"));
+
+		$("#confirmarCita").find("*[name='fecha']").val(this.innerHTML + "-" + (mnt+1) + "-" + cal.attr("data-year"));
+
 	});
-	$(".calendar .bigDay").on("click", function () {
+	/*$(".calendar .bigDay").on("click", function () {
 		console.log("out");
 		$(this).toggleClass("minimize");
-	});
+	});*/
 })

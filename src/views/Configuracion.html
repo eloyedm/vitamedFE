@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>VitalMed - Programar Citas</title>
+	<title>VitalMed - Configuraci&oacute;n de cuenta</title>
     <meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -9,6 +9,7 @@
 	<!--jQuery-->
     <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/script.js"></script>
+	<script src="/static/js/page_ajax/5_configuracion.js"></script>
 
 	<!--CARROUSEL-->
     <link rel="stylesheet" type="text/css" href="/static/libs/jCarousel/jcarousel.basic.css">
@@ -28,19 +29,26 @@
 	<header class="dash">
 		<a href="/" class="logo" ><img src="/static/img/Logo.png"><span class="tag">VitalMed</span></a>
 		<ul class="nolist">
-     		<li><a href="/home">Dashboard</a></li>
-			<li><a href="/citas">Programar Citas</a></li>
-			<li><a href="/configuracion">Configuraci&oacute;n</a></li>
+      		<!--li><a href="/dashboard">Reportes</a></li-->
+			<li><a href="/citas">Citas</a></li>
+			<li><a href="/traslados">Traslados</a></li>
+			<li><a href="/configuracion" class="selected">Configuraci&oacute;n</a></li>
 			<li><a href="/">Cerrar Sesi&oacute;n</a></li>
-
 			<li><a href="/">Ayuda</a></li>
 		</ul>
 	</header>
 	<div class="container f-between">
-		<div class="row f-arround 	fill">
+		<div class="row f-arround fill">
 			<div class="row ">
 				<div class="card dash-theme col f-between nmargin side">
 					<div class="col">
+						<!--DASHBOARD-->
+			            <div class="overBox">
+							<p>Reportes</p>
+							<div class="row f-even">
+								<a href="/dashboard"><img src="/static/img/icons/verRecordatorio.png"></a>
+							</div>
+			            </div>
 						<!--RECORDATORIOS-->
 						<div class="overBox">
 							<p>Recordatorios</p>
@@ -50,19 +58,12 @@
 							</div>
 						</div>
 						<!--CITAS-->
-						<div class="overBox">
+						<!--div class="overBox">
 							<p>Citas</p>
 							<div class="row f-even">
 								<a href="/citas"><img src="/static/img/icons/agregarRecordatorio.png"></a>
 							</div>
-						</div>
-						<!--DASHBOARD-->
-						<div class="overBox">
-							<p>Volver al dashboard</p>
-							<div class="row f-even">
-								<a href="/home"><img src="/static/img/icons/verRecordatorio.png"></a>
-							</div>
-						</div>
+						</div-->
 					</div>
 				</div>
 			</div>
@@ -159,15 +160,25 @@
 							<h3>Informaci&oacute;n medica</h3>
 							<p>
 								<div class="col">
-									<label for="inp0" class="t-left">Tipo de sangre</label>
-									<input type="text" id="inp0" name="">
+									<label for="inp0" class="t-center">Tipo de sangre</label>
+									<div class="row f-center">
+										<img  id="curbltype" src="/static/img/icons/tipo.png">
+									</div>
+									<div id="bltypes" class="row f-even">
+											<img value="a+" src="/static/img/icons/apositivo.png">
+											<img value="a-" src="/static/img/icons/anegativo.png">
+											<img value="b+" src="/static/img/icons/bpositivo.png">
+											<img value="b-" src="/static/img/icons/bnegativo.png">
+											<img value="ab+" src="/static/img/icons/abpositivo.png">
+											<img value="ab-" src="/static/img/icons/abnegativo.png">
+											<img value="o+" src="/static/img/icons/opositivo.png">
+											<img value="o-" src="/static/img/icons/onegativo.png">
+									</div>
 								</div>
-								<p>
 									<div class="col f-center">
 										<label for="inp1" class="t-left">Alergias</label>
 										<input type="text" id="inp1" name="">
 									</div>
-								</p>
 							 </p>
 							 <div class="f-right">
 							 	<input type="button" name="" value="Guardar cambios">

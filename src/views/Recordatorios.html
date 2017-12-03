@@ -25,11 +25,11 @@
 	<header class="dash">
 		<a href="/" class="logo" ><img src="/static/img/Logo.png"><span class="tag">VitalMed</span></a>
 		<ul class="nolist">
-      		<li><a href="/home">Dashboard</a></li>
-			<li><a href="/citas">Programar Citas</a></li>
+      		<!--li><a href="/dashboard">Reportes</a></li-->
+			<li><a href="/citas" class="selected">Citas</a></li>
+			<li><a href="/traslados">Traslados</a></li>
 			<li><a href="/configuracion">Configuraci&oacute;n</a></li>
 			<li><a href="/">Cerrar Sesi&oacute;n</a></li>
-
 			<li><a href="/">Ayuda</a></li>
 		</ul>
 	</header>
@@ -38,6 +38,13 @@
 			<div class="row ">
 				<div class="card dash-theme col f-between nmargin side">
 					<div class="col">
+						<!--DASHBOARD-->
+			            <div class="overBox">
+							<p>Reportes</p>
+							<div class="row f-even">
+								<a href="/home"><img src="/static/img/icons/verRecordatorio.png"></a>
+							</div>
+			            </div>
 						<!--RECORDATORIOS-->
 						<div class="overBox">
 							<p>Recordatorios</p>
@@ -47,19 +54,12 @@
 							</div>
 						</div>
 						<!--CITAS-->
-						<div class="overBox">
+						<!--div class="overBox">
 							<p>Citas</p>
 							<div class="row f-even">
 								<a href="/citas"><img src="/static/img/icons/agregarRecordatorio.png"></a>
 							</div>
-						</div>
-						<!--DASHBOARD-->
-						<div class="overBox">
-							<p>Volver al dashboard</p>
-							<div class="row f-even">
-								<a href="/home"><img src="/static/img/icons/verRecordatorio.png"></a>
-							</div>
-						</div>
+						</div-->
 					</div>
 				</div>
 			</div>
@@ -144,6 +144,40 @@
 					        <div class="jcarousel-wrapper">
 					            <div class="jcarousel">
 					                <ul id="rec_especial">
+					                	<!--ELEMENTO 1->
+					                    <li>
+					                    	<div class="receta-container row">
+											<div class="row">
+											<div class="fill block">
+												<h4 class=" t-center"> <TIME datetime="2017-11-05 12:43">05/Nov/2017 12:43pm</TIME></h4>
+												<p>Consultorio: Farmacia</p>
+												<p>Doctor: Malito</p>
+												<p>Departamento: Malvado</p>
+											</div>
+											</div>
+											</div>
+					                    </li>
+					                	<!-__________-->
+					                </ul>
+					            </div>
+					            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+					            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+					            <p class="jcarousel-pagination">
+					            </p>
+					        </div>
+					    </div>
+					</div>
+
+					<!--TRASLADOS-->
+					<div class="receta row f-left">
+						<div class="receta-container">
+							<img src="/static/img/backs/cita_traslados.png">
+							<strong>Especialidad</strong>
+						</div>
+						<div class="wrapper">
+					        <div class="jcarousel-wrapper">
+					            <div class="jcarousel">
+					                <ul id="rec_traslados">
 					                	<!--ELEMENTO 1->
 					                    <li>
 					                    	<div class="receta-container row">

@@ -25,7 +25,7 @@
 
 	<script type="text/javascript" src="/static/libs/Timer/jquery.timepicker.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/static/libs/Timer/jquery.timepicker.css">
-	<script type="text/javascript" src="/static/js/NuevaCita.js"></script>
+	<script type="text/javascript" src="/static/js/page_ajax/3_nuevacita.js"></script>
 
 </head>
 <body class="col">
@@ -33,10 +33,11 @@
 	<header class="dash">
 		<a href="/" class="logo" ><img src="/static/img/Logo.png"><span class="tag">VitalMed</span></a>
 		<ul class="nolist">
-			<li><a href="/citas">Programar Citas</a></li>
+      		<!--li><a href="/dashboard">Reportes</a></li-->
+			<li><a href="/citas" class="selected">Citas</a></li>
+			<li><a href="/traslados">Traslados</a></li>
 			<li><a href="/configuracion">Configuraci&oacute;n</a></li>
 			<li><a href="/">Cerrar Sesi&oacute;n</a></li>
-
 			<li><a href="/">Ayuda</a></li>
 		</ul>
 	</header>
@@ -45,6 +46,13 @@
 			<div class="row ">
 				<div class="card dash-theme col f-between nmargin side">
 					<div class="col">
+						<!--DASHBOARD-->
+			            <div class="overBox">
+							<p>Reportes</p>
+							<div class="row f-even">
+								<a href="/dashboard"><img src="/static/img/icons/verRecordatorio.png"></a>
+							</div>
+			            </div>
 						<!--RECORDATORIOS-->
 						<div class="overBox">
 							<p>Recordatorios</p>
@@ -54,12 +62,12 @@
 							</div>
 						</div>
 						<!--CITAS-->
-						<div class="overBox">
+						<!--div class="overBox">
 							<p>Citas</p>
 							<div class="row f-even">
 								<a href="/citas"><img src="/static/img/icons/agregarRecordatorio.png"></a>
 							</div>
-						</div>
+						</div-->
 					</div>
 				</div>
 			</div>
@@ -106,24 +114,25 @@
 
 									</div>
 								</div>
-							<p class="">
-								<div class="row">
+							<p>
+								<div class="row f-center">
 									<div class="col t-center">
-										<label for="inp2">Departamento</label>
-										<input type="text" id="inp2" name="departamento"  class="t-center"	value="Farmacia" >
+										<label for="inp2" >Departamento</label>
+										<input type="text" id="inp2" name="departamento"  class="t-center"	value="Farmacia" disabled="disabled"		autocomplete="off">
 									</div>
 									<div class="col">
-										<label for="inp3">Medico</label>
-										<input type="text" id="inp3" name="medico"  class="t-center"	placeholder="Por asignarse" >
+										<label for="inp3" >Medico</label>
+										<input type="text" id="inp3" name="medico"  class="t-center"	placeholder="*Seleccione consultorio" disabled="disabled"	autocomplete="off">
 									</div>
 								</div>
-								<label for="inp4">Consultorio</label>
-								<select id="inp4" class="t-center">
-									<option>Ninguno</option>
-								</select>
+								<div>
+									<label for="inp4">Consultorio</label>
+									<select id="inp4" class="t-center">
+										<option>Ninguno</option>
+									</select>
+								</div>
 							</p>
-								<div class="f-right"><input type="button" name="cita" value="Solicitar cita"
-								id="btnNuevaCita"></div>
+								<div class="f-right"><input type="button" name="cita" value="Agendar" id="btnNuevaCita"></div>
 						</form>
 					</div>
 				</div>

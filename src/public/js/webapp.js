@@ -76,9 +76,9 @@ $(document).ready(function(){
 				startCarousel();
 			},
 			error: function(x,y,z){
-				alert("Error " + x + y + z)
+				alert("Error " + x + y + z);
 			}
-		})
+		});
 	}
 	//var disponibilidadCache =
 
@@ -124,15 +124,7 @@ $(document).ready(function(){
 		})
 	}
 
-    $("#confirmarCita").fadeOut(0);
-
-	$("#confirmarCita *[name='cancel']").on("click", function(){
-		$("#confirmarCita").fadeOut(400);
-	})
-	$("#confirmarCita *[name='submit']").on("click", function(){
-
-		$("#confirmarCita").fadeOut(1000);
-	})
+    
 })
 
 function getCookieValue(a) {

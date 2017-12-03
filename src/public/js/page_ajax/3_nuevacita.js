@@ -5,29 +5,42 @@ var cookies;
 var user = readCookie('user');
 $(document).ready(function(){
 
-
 	$("#imagen1").on('click', function(event) {
 		$("#tipoSecreto").val("1");
-		});
+		$("#inp2").parent().show();
+		$("#inp3").parent().hide();
+		$("#inp4").parent().hide();
+		$('#inp2').attr("disabled","disabled");
+	});
 	$("#imagen2").on('click', function() {
 		$("#tipoSecreto").val("2");
-		});
+		$("#inp2").parent().hide();
+		$("#inp3").parent().show();
+		$("#inp4").parent().show();
+		$('#inp2').attr("disabled","disabled");
+	});
 	$("#imagen3").on('click', function() {
 		$("#tipoSecreto").val("3");
-		});
+		$("#inp2").parent().show();
+		$("#inp3").parent().show();
+		$("#inp4").parent().hide();
+		$('#inp2').removeAttr("disabled");
+		//Desbloquear departamento
+		//cambiar *seleccione departamento
+	});
 
 	$( "#btnNuevaCita" ).click(function( event ) {
   		console.log( $( "#horaV" ) );
   		event.preventDefault();
 	});
 
-	$('#horaV').timepicker({minTime:'7:00am', maxTime:'6:30pm'});
+	$('#inp1').timepicker({minTime:'7:00am', maxTime:'6:30pm'});
 
 	$("#btnNuevaCita").click( function(event){
 		window.location.replace = "/citas";
 		event.preventDefault();
 		var tipo = $()
-		// $.ajax({
+		 $.ajax({
 			method: 'POST',
 			url: serviceHost + '/services/cita',
 			data: {
@@ -48,6 +61,8 @@ $(document).ready(function(){
 		})
 	})
 
+	if ($("#imagen1").length)
+		$("#imagen1")[0].click();
 })
 
 function getCookieValue(a) {
@@ -79,3 +94,4 @@ function readCookie(name) {
 function eraseCookie(name) {
     createCookie(name,"",-1);
 }
+

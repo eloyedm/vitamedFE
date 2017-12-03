@@ -31,11 +31,11 @@
   <header class="dash">
     <a href="/" class="logo" ><img src="/static/img/Logo.png"><span class="tag">VitalMed</span></a>
     <ul class="nolist">
-      <li><a href="/home">Dashboard</a></li>
-      <li><a href="/citas">Programar Citas</a></li>
+          <!--li><a href="/dashboard">Reportes</a></li-->
+      <li><a href="/citas" class="selected">Citas</a></li>
+      <li><a href="/traslados">Traslados</a></li>
       <li><a href="/configuracion">Configuraci&oacute;n</a></li>
       <li><a href="/">Cerrar Sesi&oacute;n</a></li>
-
       <li><a href="/">Ayuda</a></li>
     </ul>
   </header>
@@ -44,6 +44,13 @@
       <div class="row ">
         <div class="card dash-theme col f-between nmargin side">
           <div class="col">
+              <!--DASHBOARD-->
+              <div class="overBox">
+                <p>Reportes</p>
+                <div class="row f-even">
+                <a href="/dashboard"><img src="/static/img/icons/verRecordatorio.png"></a>
+                </div>
+              </div>
               <!--RECORDATORIOS-->
               <div class="overBox">
                 <p>Recordatorios</p>
@@ -53,18 +60,12 @@
                 </div>
               </div>
               <!--CITAS-->
-              <div class="overBox">
+              <!--div class="overBox">
                 <p>Citas</p>
                 <div class="row f-even">
                   <a href="/citas"><img src="/static/img/icons/agregarRecordatorio.png"></a>
                 </div>
-            </div>
-            <!--DASHBOARD-->
-            <div class="overBox">
-              <p>Volver al dashboard</p>
-              <div class="row f-even">
-                <a href="/home"><img src="/static/img/icons/verRecordatorio.png"></a>
-              </div>
+              </div-->
             </div>
           </div>
         </div>
