@@ -1,0 +1,61 @@
+.onboard {
+    width: 240px;
+    display: inline-flex;
+    /* padding: 5px; */
+    margin: auto;
+   
+}
+
+.onboard p {
+    border-radius: 6px;
+    background-color: rgba(197,233,224,0.8);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.onboard .titulo{
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+}
+
+.onboard span{ color: rgb(1,37,115); }
+
+.onpopup {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-30%, -40%);
+    background-color: rgba(173,216,230,0.5);
+    /* height: 500px; */
+    /* display: block; */
+    /* margin: 0; */
+    padding: 8px;
+    /* border: 0; */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.enlaceob {
+    text-decoration: none;
+    margin: auto;
+}
+
+button{
+	float: right;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	border-radius: 4px;
+	background: rgba(197,233,224,0.75);
+	height: 30px;
+
+}
+.blackscreen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: none;
+    height: 100vh;
+    background: rgba(0,0,0, 0.750);
+    z-index: 100;
+}
