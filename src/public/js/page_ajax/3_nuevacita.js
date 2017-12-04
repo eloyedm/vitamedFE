@@ -1,5 +1,5 @@
-// var serviceHost = 'http://vitamedbe.local';
-var serviceHost = 'http://localhost:8000';
+var serviceHost = 'http://vitalmed.xyz:8080';
+// var serviceHost = 'http://localhost:8000';
 var cookies;
 
 var user = readCookie('user');
@@ -63,6 +63,19 @@ $(document).ready(function(){
 
 	if ($("#imagen1").length)
 		$("#imagen1")[0].click();
+
+	$.ajax({
+		method: 'POST',
+		url: serviceHost+ '/services/consultorios',
+		success: function(data){
+			var consultoriosContainer = $(".consultSelect");
+			var stringCons = '';
+			for (var consultorio of data.consultorios) {
+				stringCons += '<option value="'+consultorio.numero+'" >'+consultorio.consultorio+'</option>';
+			}
+			consultoriosContainer.html(stringCons);
+		}
+	});
 })
 
 function getCookieValue(a) {
@@ -94,4 +107,3 @@ function readCookie(name) {
 function eraseCookie(name) {
     createCookie(name,"",-1);
 }
-
