@@ -6,21 +6,20 @@ $(document).ready(function(){
 	//DASHBOARD
 	var user = readCookie('username');
 	var userToken = readCookie('sessionToken');
-	if 	($("#citasHolder").length > 0)
-		dashboard_get(serviceHost+'/services/dashboard', user, userToken);
-	else if
+	// if 	($("#citasHolder").length > 0)
+	// 	// dashboard_get(serviceHost+'/services/dashboard', user, userToken);
+	// else if
 	//CITAS
 		//($("#cita_disponible").length > 0)
 		//dashboard_get('routes/citas','Z_bas01@hotmail.com','123ABC');
 	//else if
 	//RECORDATORIOS
-		($("#rec_general").length > 0)
-		recordatorios_get(serviceHost+'/services/recordatorios',user,userToken);
+		// ($("#rec_general").length > 0)
+		// recordatorios_get(serviceHost+'/services/recordatorios',user,userToken);
 	//else if
 	//CONFIGURACION
 		//($("#rec_general").length > 0)
 		//dashboard_get('routes/configuracion','Z_bas01@hotmail.com','123ABC');
-
 
 	function dashboard_get(route, user, token){
 	    $.ajax({
@@ -124,7 +123,7 @@ $(document).ready(function(){
 		})
 	}
 
-    
+
 })
 
 function getCookieValue(a) {
