@@ -1,5 +1,5 @@
-var serviceHost = 'http://vitalmed.xyz:8080';
-// var serviceHost = 'http://localhost:8000';
+// var serviceHost = 'http://vitalmed.xyz:8080';
+var serviceHost = 'http://localhost:8000';
 var cookies;
 
 var user = readCookie('user');
@@ -56,6 +56,27 @@ $(document).ready(function(){
 				if (data.status == 202){
 					//window.location.replace = ""
 					alert("Cita agregada exitosamente");
+				}
+			}
+		})
+	})
+
+	$("#btnNuevaReceta").click( function(event){
+		// window.location.replace = "/citas";
+		event.preventDefault();
+		var tipo = $()
+		 $.ajax({
+			method: 'POST',
+			url: serviceHost + '/services/receta',
+			data: {
+				fecha: $('#inp0Receta').val(),
+				hora: $('#inp1Receta').val(),
+				user: user
+			}
+			,success: function(data){
+				if (data.status == 202){
+					//window.location.replace = ""
+					alert("Receta agregada exitosamente");
 				}
 			}
 		})

@@ -1,3 +1,5 @@
+// var serviceHost = 'http://vitalmed.xyz:8080';
+var serviceHost = 'http://localhost:8000';
 $(document).ready(function(){
 
 	$(".calendar td").on("click", function(){
@@ -14,4 +16,5 @@ $(document).ready(function(){
 	});
 
 	$('#hora').timepicker({minTime:'7:00am', maxTime:'6:30pm'});
+
 });
