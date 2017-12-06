@@ -1,3 +1,8 @@
+@font-face{
+	font-family: "Open sans";
+	src: url("/static/css/Open_Sans/OpenSans-Regular.ttf");
+}
+
 body{
 	font-size: 16px;
 	margin: 0px;
@@ -8,12 +13,12 @@ body{
 @media screen and (max-width: 1024px){
 	body{
 		font-size: 14px;
-	}	
+	}
 }
 @media screen and (max-width: 700px){
 	body{
 		font-size: 12px;
-	}	
+	}
 }
 body > *{
 	flex-grow: 1;
@@ -27,7 +32,7 @@ body > *{
 	min-width: 30em;
 	height: auto;
 	box-sizing: border-box;
-	margin: 0 2em; 
+	margin: 0 2em;
 }
 .card span{
 	padding: 2em 0;
@@ -68,7 +73,7 @@ input[disabled], input[disabled]:hover{
 
 
 
-.rel-center, .rel-hcenter, .rel-vcenter{	
+.rel-center, .rel-hcenter, .rel-vcenter{
 	position: relative;
 	top:  50%;
 	left: 50%;
@@ -230,8 +235,8 @@ header a{
 }
 @media screen and (max-width: 400px){
 	header li a{
-		margin-left: 0.5em: 
-		margin-right: 0.5em: 
+		margin-left: 0.5em:
+		margin-right: 0.5em:
 	}
 }
 .wrapper{
@@ -256,13 +261,13 @@ footer.dash a{
 header.dash .logo img{
 	height: 5em;
 	padding: 0 2em;
-	padding-right: 1em; 
+	padding-right: 1em;
 }
 .dash-theme{
 	color: white;
 	min-width: 16vw;
 	border-radius: 0;
-	margin-left: 0; 
+	margin-left: 0;
 }
 
 .config-group img{
@@ -298,7 +303,7 @@ header.dash .logo img{
 }
 .dash-theme .overBox a{
 	padding: 0 0.5em;
-	border-radius: 4px; 
+	border-radius: 4px;
 	background: rgba(0,0,0,0.125);
 }
 .dash-theme .overBox a:hover{
@@ -314,7 +319,7 @@ header.dash .logo img{
 	}
 }
 .nmtop{
-	margin-top: 0; 
+	margin-top: 0;
 }
 
 .hide-trigger:not(.active), .hide-target:not(.active){
@@ -429,7 +434,7 @@ header.dash .logo img{
 }
 *not(popup) input[disabled]:hover{
 	background: #003366;
-	
+
 }
 #bltypes img{
 	width: 40px;
