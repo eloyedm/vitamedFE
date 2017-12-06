@@ -25,6 +25,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname +'/views/Home.html');
 })
 
+app.get('/welcome', function(req, res){
+  res.sendFile(__dirname +'/views/Onboarding.html');
+})
+
 app.get('/login', function(req, res){
   res.sendFile(__dirname +'/views/login.html');
 })
@@ -63,12 +67,20 @@ app.get('/recordatorios', function(req, res){
       res.redirect('/');
     }
   });
-})
+});
+
+app.get('/configuracion', function(req, res){
+  validateSession(req.cookies, function(data){
+    if(data){
+      res.sendFile(__dirname +'/views/Configuracion.html');
+    }else{
+      res.redirect('/');
+    }
+  });
+});
 
 app.get('/nueva', function(req, res){
-  console.log(req.cookies);
   validateSession(req.cookies, function(data){
-    console.log(data);
     if(data){
       res.sendFile(__dirname +'/views/NuevaCita.html');
     }else{
