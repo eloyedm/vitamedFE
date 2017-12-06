@@ -1,5 +1,5 @@
-var serviceHost = 'http://vitalmed.xyz:8080';
-// var serviceHost = 'http://localhost:8000';
+// var serviceHost = 'http://vitalmed.xyz:8080';
+var serviceHost = 'http://localhost:8000';
 var cookies;
 
 $(document).ready(function(){
@@ -9,6 +9,25 @@ $(document).ready(function(){
 	if 	($("#citasHolder").length > 0){
 		dashboard_get_chart(serviceHost+'/services/get/general/grouped', user, userToken);
 		dashboard_get_citas(serviceHost+'/services/recordatorios', user, userToken);
+		var generalSlider = $("#citasHolder");
+		$.ajax({
+	    method: 'POST',
+	    url: serviceHost+ '/services/get/general',
+	    data: {
+	      user: user
+	    },
+	    success: function(data){
+	      var citasContainer = '';
+	      for (cita of data.citas) {
+	        var fecha = new Date(cita.fecha.date);
+	        var hora = new Date(cita.hora.date);
+	        fecha = moment(fecha).format('DD/MMM/YYYY')
+	        hora = moment(hora).format('hh:mm a');
+	        citasContainer += '<li><div class="receta-container row"><div class="row"><div class="fill block"><h4 class=" t-center"><TIME datetime="'+fecha+' '+hora+'">'+fecha+' '+hora+'</TIME></h4><p>Consultorio:'+cita.consultorio+'</p><p>Doctor: </p><p>&nbsp;</p></div></div></div></li>';
+	        generalSlider.html(citasContainer);
+	      }
+	    }
+	  });
 	}
 	else if
 	//CITAS
@@ -87,7 +106,7 @@ $(document).ready(function(){
 
 					$("#citasHolder").append(envelope);
 				}
-				
+
 				startCarousel();
 			},
 			error: function(x,y,z){
@@ -139,7 +158,7 @@ $(document).ready(function(){
 		})
 	}
 
-    
+
 })
 
 function getCookieValue(a) {
