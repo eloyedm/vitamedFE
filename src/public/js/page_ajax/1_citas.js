@@ -1,9 +1,19 @@
-var serviceHost = 'http://vitalmed.xyz:8080';
+// var serviceHost = 'http://vitalmed.xyz:8080';
+var serviceHost = 'http://localhost:8000';
 
+var user = readCookie('username');
 $(document).ready(function(){
 
 	$(".calendar td").on("click", function(){
-		$("#confirmarCita").fadeIn(400);
+		$.ajax({
+			method: 'POST',
+			url: serviceHost+'/services/solicitar/cita',
+			success: function(data){
+				$('input[name="Doctor"]').val(data.doctor.nombre).attr('data-cita', data.doctor.iddoctor);
+				$('input[name="Consultorio"]').val(data.consultorio.consultorio).attr('data-cita', data.consultorio.idconsultorio);
+				$("#confirmarCita").fadeIn(400);
+			}
+		})
 	});
 
 	$("#confirmarCita").fadeOut(0);
@@ -13,19 +23,15 @@ $(document).ready(function(){
 	$("#confirmarCita *[name='submit']").on("click", function(){
 
 		$("#confirmarCita").fadeOut(1000);
-		
 		$.ajax({
 			method: 'POST',
-			url: serviceHost+'/services/nuevacita',
+			url: serviceHost+'/services/create/cita',
 			data: {
-				email: 		$('input[name="Mail"]'			).val(),
-				password: 	$('input[name="Pass"]'			).val(),
-
-				nombre: 	$('input[name="Fecha"]'			).val(),
-				nombre: 	$('input[name="Hora"]'			).val(),
-				apellidoP: 	$('input[name="Doctor"]'		).val(),
-				apellidoM: 	$('input[name="Consultorio"]'	).val(),
-				apellidoM: 	$('input[name="numCita"]'		).val()
+				user: user,
+				fecha: 	$('input[name="Fecha"]'			).val(),
+				hora: 	$('input[name="Hora"]'			).val(),
+				doctor: 	$('input[name="Doctor"]'		).attr('data-cita'),
+				consultorio: 	$('input[name="Consultorio"]'	).attr('data-cita')
 			}
 			,success: function(data){
 				if (data.status == 202){
