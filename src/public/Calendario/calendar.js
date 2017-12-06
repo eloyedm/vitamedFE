@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 		var threshold = 2;
 
-		var altDays = [17,5,23];
+		var altDays = [];
 
 
 		var pmonthlen = largoMes[esteMes-1];

@@ -13,8 +13,7 @@ $(document).ready(function(){
 	$("#confirmarCita *[name='submit']").on("click", function(){
 
 		$("#confirmarCita").fadeOut(1000);
-
-		event.preventDefault();
+		
 		$.ajax({
 			method: 'POST',
 			url: serviceHost+'/services/nuevacita',
