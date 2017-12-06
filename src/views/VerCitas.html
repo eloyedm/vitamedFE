@@ -8,7 +8,7 @@
 	<!--jQuery-->
     <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
   	<script type="text/javascript" src="/static/js/script.js"></script>
-  	
+
 	<!--CARROUSEL->
     <link rel="stylesheet" type="text/css" href="/static/libs/jCarousel/style.css"-->
     <link rel="stylesheet" type="text/css" href="/static/libs/jCarousel/jcarousel.basic.css">
@@ -35,24 +35,49 @@
 			<h3 class="t-center">Resumen de tu cita</h3>
 			<div class="row">
 				<label>Fecha y hora</label>
-				<input class="row4" type="text" name="fecha" value="12-Nov-2017" disabled="disabled">
-				<input id="hora" type="time"  name="">
-			</div>
+				<input name="Fecha" class="row4" type="text"  value="12-Nov-2017" disabled="disabled">
+				<!--input name="Hora" type="time"  value="7:00" autocomplete="off" step="1800"-->
+				<select name="Hora">
+					<option value="7:00am"	default>7:00am		</option>
+					<option value="7:30am"	>7:30am		</option>
+					<option value="8:00am"	>8:00am		</option>
+					<option value="8:30am"	>8:30am		</option>
+					<option value="9:00am"	>9:00am		</option>
+					<option value="9:30am"	>9:30am		</option>
+					<option value="10:00am"	>10:00am	</option>
+					<option value="10:30am"	>10:30am	</option>
+					<option value="11:00am"	>11:00am	</option>
+					<option value="11:30am"	>11:30am	</option>
+					<option value="12:00am"	>12:00pm	</option>
+					<option value="12:30pm"	>12:30pm	</option>
+					<option value="1:00pm"	>1:00pm		</option>
+					<option value="1:30pm"	>1:30pm		</option>
+					<option value="2:00pm"	>2:00pm		</option>
+					<option value="2:30pm"	>2:30pm		</option>
+					<option value="3:00pm"	>3:00pm		</option>
+					<option value="3:30pm"	>3:30pm		</option>
+					<option value="4:00pm"	>4:00pm		</option>
+					<option value="4:30pm"	>4:30pm		</option>
+					<option value="5:00pm"	>5:00pm		</option>
+					<option value="5:30pm"	>5:30pm		</option>
+					<option value="6:00pm"	>6:00pm		</option>
+					<option value="6:30pm"	>6:30pm		</option>
+				</select>
 			<div class="row">
 				<label>Doctor</label>
-				<input type="text" name="doctor" value="Simi" disabled="disabled">
+				<input name="Doctor" type="text" value="Simi" disabled="disabled">
 			</div>
 			<div class="row">
 				<label>Consultorio</label>
-				<input type="text" name="consultorio" value="B-34" disabled="disabled">
+				<input name="Consultorio" type="text" value="B-34" disabled="disabled">
 			</div>
 			<div class="row">
 				<label>Numero de cita</label>
-				<input type="text" name="numCita" value="02284" disabled="disabled">
+				<input name="numCita" type="text" value="02284" disabled="disabled">
 			</div>
 			<div class="row f-around fill">
-				<input type="button" name="cancel" value="Cancelar">
-				<input type="button" name="submit" value="Confirmar">
+				<input name="cancel" type="button" value="Cancelar">
+				<input name="submit" type="button" value="Confirmar">
 			</div>
 		</div>
 		<!--ONBOARDING-->
