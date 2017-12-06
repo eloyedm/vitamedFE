@@ -1,5 +1,5 @@
-// var serviceHost = 'http://vitalmed.xyz:8080';
-var serviceHost = 'http://localhost:8000';
+var serviceHost = 'http://vitalmed.xyz:8080';
+// var serviceHost = 'http://localhost:8000';
 
 var user = readCookie('username');
 $(document).ready(function(){
