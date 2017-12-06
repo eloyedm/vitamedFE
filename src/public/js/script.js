@@ -20,6 +20,7 @@ $(document).ready(function(){
 				if (data.status == 202){
 					//window.location.replace = ""
 					alert("Te has registrado!");
+          window.location.replace('/home');
 				}
 			}
 		})
