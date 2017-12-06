@@ -6,57 +6,41 @@ $(document).ready(function(){
 	//DASHBOARD
 	var user = readCookie('username');
 	var userToken = readCookie('sessionToken');
-	// if 	($("#citasHolder").length > 0)
-	// 	// dashboard_get(serviceHost+'/services/dashboard', user, userToken);
-	// else if
+	if 	($("#citasHolder").length > 0){
+		dashboard_get_chart(serviceHost+'/services/get/general/grouped', user, userToken);
+		dashboard_get_citas(serviceHost+'/services/recordatorios', user, userToken);
+	}
+	else if
 	//CITAS
 		//($("#cita_disponible").length > 0)
 		//dashboard_get('routes/citas','Z_bas01@hotmail.com','123ABC');
 	//else if
 	//RECORDATORIOS
-		// ($("#rec_general").length > 0)
-		// recordatorios_get(serviceHost+'/services/recordatorios',user,userToken);
+		($("#rec_general").length > 0)
+		recordatorios_get(serviceHost+'/services/recordatorios',user,userToken);
 	//else if
 	//CONFIGURACION
 		//($("#rec_general").length > 0)
 		//dashboard_get('routes/configuracion','Z_bas01@hotmail.com','123ABC');
 
-	function dashboard_get(route, user, token){
+
+	function dashboard_get_chart(route, user, token){
 	    $.ajax({
 			url: route,
 			async: true,
 			type: 'POST',
 			data: {user: user, token: token},
 			success: function(response){
-				var result = response
-				var chartVal = result.chart;
-				var citasVal = result.citas;
+				var chartVal = [];
 				var chartPoints = [];
+				var fecha = new Date();
+
 				//GRAFICO DE CITAS
-				if(chartVal !== undefined){
-					for (var i = 0; i < chartVal.length; i++){
-						var t = chartVal[i].x.split(/[- :]/);
-						chartVal[i].x = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-						chartPoints.push(chartVal[i]);
-					}
+				for (var i = 0; i < 12; i++){
+					chartVal.push({'x': new Date(fecha.getFullYear(), fecha.getMonth() - i, 01), 'y': response.citas[i]});
+					chartPoints.push(chartVal[i]);
 				}
 
-				//CITAS
-				for (var i = 0; i < citasVal.length; i++){
-
-                 	var envelope = 	$('<div class="fill block"></div>')
-                 			.append('<h4 class=" t-center"><TIME>'	+citasVal[i].fecha.date 		+'</TIME></h4>')
-                 			.append('<p>Consultorio: '				+citasVal[i].consultorio+'</p>')
-                 			.append('<p>Doctor: '					+citasVal[i].doctor 	+'</p>')
-                 			.append('<p>Numero de cita: '			+citasVal[i].cita 		+'</p>');
-
-                 		envelope = 	$('<li></li>')
-                 			.append($('<div class="receta-container row"></div>')
-                 			.append($('<div class="row"></div>')
-                 			.append(envelope)));
-
-					$("#citasHolder").append(envelope);
-				}
 				//GRAFICOS
 				var chart = new CanvasJS.Chart("chartContainer",
 			    {
@@ -72,6 +56,38 @@ $(document).ready(function(){
 				    }]
 			    });
 				chart.render();
+			},
+			error: function(x,y,z){
+				alert("Error " + x + y + z);
+			}
+		});
+	}
+	function dashboard_get_citas(route, user, token){
+		$.ajax({
+			url: route,
+			async: true,
+			type: 'POST',
+			data: {user: user, token: token},
+			success: function(response){
+
+
+				//CITAS
+				for (var i = 0; i < response.citas.length; i++){
+					var ndate = response.citas[i].fecha.date.split(" ")[0]+ "   " +response.citas[i].hora.date.split(" ")[1].split(".")[0];
+                 	var envelope = 	$('<div class="fill block"></div>')
+                 			.append('<h4 class=" t-center"><TIME>'	+ndate								+'</TIME></h4>')
+                 			/*.append('<p>Consultorio: '				+response.citas[i].consultorio		+'</p>')
+                 			.append('<p>Doctor: '					+response.citas[i].doctor 			+'</p>')
+                 			.append('<p>Numero de cita: '			+response.citas[i].cita 			+'</p>');
+*/
+                 		envelope = 	$('<li></li>')
+                 			.append($('<div class="receta-container row"></div>')
+                 			.append($('<div class="row"></div>')
+                 			.append(envelope)));
+
+					$("#citasHolder").append(envelope);
+				}
+				
 				startCarousel();
 			},
 			error: function(x,y,z){
@@ -123,7 +139,7 @@ $(document).ready(function(){
 		})
 	}
 
-
+    
 })
 
 function getCookieValue(a) {
